@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+
+    const MemorizedBtn = React.memo(Btn);
+
+    function Btn({ customText, changeValue }) {
+      console.log(`was render ${customText}`);
+      return (
+        <button
+          style={{
+            border: 0,
+            borderRadius: "10px",
+            backgroundColor: "red",
+            padding: "10px 20px",
+          }}
+          onClick={changeValue}
+        >
+          {customText}
+        </button>
+      );
+    }
+
+    const App = () => {
+      const [value, setValue] = React.useState("Save Changes");
+      const changeValue = () => setValue("Revert Changes");
+      return (
+        <div>
+          <MemorizedBtn customText={value} changeValue={changeValue} />
+          <MemorizedBtn customText="Continue" />
+        </div>
+      );
+    };
+
+    ReactDOM.render(<App />, root);
+  </script>
+</html>

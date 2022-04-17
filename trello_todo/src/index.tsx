@@ -3,10 +3,10 @@ import ReactDOM from "react-dom";
 import { RecoilRoot } from "recoil";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import App from "./App";
-import { Theme } from "./theme";
+import { lightTheme } from "./theme";
 
-const GlobalStyle = createGlobalStyle`
-html, body, div, span, applet, object, iframe,
+const GobalStyle = createGlobalStyle`
+  html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -49,20 +49,13 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-body {
-  font-weight: 300;
-  background-color: ${(props) => props.theme.bgColor};
-  color: black;
-  line-height: 1.2;
-}
 `;
 
 ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
-      <ThemeProvider theme={Theme}>
-        <GlobalStyle />
+      <ThemeProvider theme={lightTheme}>
+        <GobalStyle />
         <App />
       </ThemeProvider>
     </RecoilRoot>

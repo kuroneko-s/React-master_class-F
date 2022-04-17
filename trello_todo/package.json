@@ -1,5 +1,5 @@
 {
-  "name": "trello_project",
+  "name": "trello_todo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,15 +12,12 @@
     "@types/react-dom": "^17.0.9",
     "@types/styled-components": "^5.1.24",
     "apexcharts": "^3.35.0",
-    "base64-cryptocurrency-icons": "^1.1.20",
     "react": "^17.0.2",
     "react-apexcharts": "^1.4.0",
     "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.29.0",
-    "react-query": "^3.34.19",
-    "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "recoil": "^0.7.0",
     "styled-components": "^5.3.5",
@@ -28,7 +25,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "set PORT=3031 && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
